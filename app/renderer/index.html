@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>GraphQL Testing Suite</title>
+  <link rel="stylesheet" href="./SemanticUI/semantic.css" />
+</head>
+
+<body>
+  <div id="app"></div>
+  <script>
+    if (typeof module === 'object') {
+      window.module = module;
+      module = undefined;
+    }
+  </script>
+  <script src="./SemanticUI/jquery.js"></script>
+  <script src="./SemanticUI/semantic.js"></script>
+  <script src="./app.js" data-container="#app"></script>
+  <script>
+    if (process.env.BROWSER_SYNC_CLIENT_URL) {
+      const current = document.currentScript;
+      const script = document.createElement('script');
+      script.src = process.env.BROWSER_SYNC_CLIENT_URL;
+      script.async = true;
+      current.parentNode.insertBefore(script, current);
+    }
+  </script>
+  <script>
+    if (window.module) module = window.module;
+  </script>
+</body>
+
+</html>
